@@ -9,6 +9,8 @@
 #import "QCAppDelegate.h"
 
 #import "QCViewController.h"
+#import "QCCreateAccountViewController.h"
+#import "QCSingInViewController.h"
 
 @implementation QCAppDelegate
 
@@ -16,10 +18,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[QCViewController alloc] initWithNibName:@"QCViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    QCSingInViewController *signInView = [[QCSingInViewController alloc]initWithNibName:nil bundle:nil];
+//    QCCreateAccountViewController *createAccountView = [[QCCreateAccountViewController alloc]initWithNibName:nil bundle:nil];
+//    QCViewController *QCView = [[QCViewController alloc]initWithNibName:nil bundle:nil];
+    UINavigationController *navView = [[UINavigationController alloc]initWithRootViewController:signInView];
+    
+    self.window.rootViewController = navView;
     [self.window makeKeyAndVisible];
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -47,6 +56,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    [MagicalRecord cleanUp];
 }
 
 @end

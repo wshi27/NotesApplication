@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Note.h"
+#import "QCCreateNoteViewController.h"
+#import "QCCustomTableViewCell.h"
 
-@interface QCViewController : UIViewController
+@interface QCViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (strong, nonatomic)NSCompoundPredicate *currentPredicate;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
+- (NSArray *) notesArray;
+
 
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Note.h"
 
 @interface QCCreateNoteViewController : UIViewController
+
+@property(strong, nonatomic) Note * selectedNote;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 
 @end

@@ -10,4 +10,8 @@
 
 @interface QCCustomTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateCratedLable;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
