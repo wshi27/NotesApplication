@@ -2,7 +2,7 @@
 //  Note.m
 //  NotesApplication
 //
-//  Created by Weiwei Shi on 7/4/13.
+//  Created by Weiwei Shi on 9/1/13.
 //  Copyright (c) 2013 self.edu. All rights reserved.
 //
 
@@ -15,5 +15,6 @@
 @dynamic dateCreated;
 @dynamic index;
 @dynamic title;
+@dynamic image;
 
 @end
